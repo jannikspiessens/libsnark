@@ -142,7 +142,7 @@ void pb_linear_combination<FieldT>::evaluate(protoboard<FieldT> &pb) const
         return; // do nothing
     }
 
-    FieldT sum = 0;
+    FieldT sum = FieldT::zero();
     for (auto term : this->terms)
     {
         sum += term.coeff * pb.val(pb_variable<FieldT>(term.index));
